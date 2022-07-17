@@ -18,13 +18,11 @@
 
 .containerDark{
     background-color: var(--darkMode);
-    border-radius: 30px;
-    width: 32%;
+    border-radius: 30px; 
 }
 
 .containerLight{
     background-color: var(--lightMode);
-    width: 32%;
     border-radius: 30px;
 }
 
