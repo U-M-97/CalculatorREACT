@@ -19,11 +19,13 @@
 .containerDark{
     background-color: var(--darkMode);
     border-radius: 30px; 
+    max-width: 360px;
 }
 
 .containerLight{
     background-color: var(--lightMode);
     border-radius: 30px;
+    max-width: 360px;
 }
 
 .themeMode{
