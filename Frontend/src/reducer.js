@@ -29,6 +29,9 @@ const reducer = (state, action) => {
         case "÷":
             result = previous / current
             break
+
+        // case "%":
+        //     result =     
     }
 
     return result.toString()
@@ -57,12 +60,14 @@ const reducer = (state, action) => {
         }
 
     case ACTIONS.CHOOSE_OPERATION:
-        console.log(state,action)
-        if(state.current == null){
-            return state
+    
+        if(state.operation !=null && action.operation!=null){
+            return {
+                ...state, operation: action.operation
+            }
         }
 
-        if(state.operation !=null && action.operation!=null){
+        if(state.current == null){
             return state
         }
 
@@ -81,10 +86,19 @@ const reducer = (state, action) => {
 
     case ACTIONS.DELETE:
 
+        if(state.current == null && state.operation != null && state.previous != null ){
+            return{
+                ...state, operation: null ,
+                current: state.previous,
+                previous: null
+            }
+        }
+
         if(state.current == null){
             return state
         }
 
+        console.log(state)
         return{
             ...state, current:state.current.slice(0, -1)
         }
